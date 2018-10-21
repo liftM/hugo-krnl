@@ -2,6 +2,10 @@
   {{ partial "foot_custom.html" . }}
   {{ template "_internal/google_analytics.html" . }}
 
+  {{  if and (eq .Type "post") (not .Site.IsServer) }}
+    {{ template "_internal/disqus.html" . }}
+  {{ end }}
+
   {{ with .Site.Params.footer }}
   <hr/>
   {{ . | markdownify }}
