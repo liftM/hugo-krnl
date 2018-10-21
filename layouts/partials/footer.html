@@ -1,5 +1,7 @@
   <footer>
   {{ partial "foot_custom.html" . }}
+  {{ template "_internal/google_analytics.html" . }}
+
   {{ with .Site.Params.footer }}
   <hr/>
   {{ . | markdownify }}
