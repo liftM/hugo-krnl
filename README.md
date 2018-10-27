@@ -1,5 +1,7 @@
 # hugo-krnl
 
+You can see this theme in action on [my blog](https://leozhang.me).
+
 hugo-krnl adds additional features to [yihui/hugo-xmin](https://github.com/yihui/hugo-xmin):
 
 - Optional features, now turned on by default
