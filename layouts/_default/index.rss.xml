@@ -12,7 +12,7 @@
     {{ with .OutputFormats.Get "RSS" }}
         {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{ end }}
-    {{ range where .Pages "Section" "post" }}{{ if not .Draft }}
+    {{ range where (where .Pages "Section" "post") "Draft" false }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
@@ -21,6 +21,6 @@
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Summary | html }}</description>
     </item>
-    {{ end }}{{ end }}
+    {{ end }}
   </channel>
 </rss>
