@@ -1,14 +1,16 @@
 {{ partial "header.html" . }}
 
-{{if not .IsHome }}
 <h1>{{ .Title | markdownify }}</h1>
-{{ end }}
 
 <main>
   {{ .Content }}
 
   <ul>
-    {{ range (where (where .Data.Pages "Draft" false) "Section" "!=" "") }}
+    {{ $section := .Section }}
+    {{ if .IsHome }}
+      {{ $section = $.Site.Params.home }}
+    {{ end }}
+    {{ range (where (where .Data.Pages "Draft" false) "Section" "==" $section) }}
     <li>
       <span class="date">{{ .Date.Format "2006/01/02" }}</span>
       <a href="{{ .URL }}">{{ .Title | markdownify }}</a>
