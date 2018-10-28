@@ -4,12 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <link rel="stylesheet" href="{{ "/css/style.css" | relURL }}" />
-    <link rel="stylesheet" href="{{ "/css/fonts.css" | relURL }}" />
+    <link rel="stylesheet"
+          href="{{ "/css/style.css" | relURL }}"
+          media="none" onload="if(media!='all')media='all'"/>
+    <link rel="stylesheet"
+          href="{{ "/css/fonts.css" | relURL }}"
+          media="none" onload="if(media!='all')media='all'" />
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css"
           integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv"
-          crossorigin="anonymous">
+          crossorigin="anonymous"
+          media="none" onload="if(media!='all')media='all'" />
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js"
             integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O"
             crossorigin="anonymous"></script>
