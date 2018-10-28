@@ -12,7 +12,7 @@
     {{ end }}
     {{ range (where (where .Data.Pages "Draft" false) "Section" "==" $section) }}
     <li>
-      <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+      {{ if not .Date.IsZero }}<span class="date">{{ .Date.Format "2006/01/02" }}</span>{{ end }}
       <a href="{{ .URL }}">{{ .Title | markdownify }}</a>
     </li>
     {{ end }}
