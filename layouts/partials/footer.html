@@ -2,7 +2,7 @@
   {{ partial "foot_custom.html" . }}
   {{ template "_internal/google_analytics.html" . }}
 
-  {{  if and (eq .Type "post") (not .Site.IsServer) }}
+  {{  if and (eq .Type "post") (.Site.Params.enableDisqus) }}
     {{ template "_internal/disqus.html" . }}
   {{ end }}
 
