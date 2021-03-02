@@ -6,7 +6,7 @@
   {{ .Content }}
 
   <ul>
-    {{ range (where (where .Data.Pages "Draft" false) "Section" "post")}}
+    {{ range (where (where .Site.RegularPages "Draft" false) "Section" "post")}}
     <li>
       {{ if not .Date.IsZero }}<span class="date">{{ .Date.Format "2006/01/02" }}</span>{{ end }}
       <a href="{{ .URL }}">{{ .Title | markdownify }}</a>
